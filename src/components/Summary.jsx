@@ -13,7 +13,7 @@ export default function Summary({ totalRemaining, categoryTotals }) {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         <div>
           <p className="text-sm font-medium text-zinc-500 mb-1">A Realizar</p>
-          <p className="text-3xl font-bold tracking-tight text-zinc-900 truncate">{formatPrice(totalRemaining)}</p>
+          <p className="text-xl sm:text-3xl font-bold tracking-tight text-zinc-900 truncate">{formatPrice(totalRemaining)}</p>
         </div>
         {CATEGORIES.map(cat => {
           if (categoryTotals[cat] > 0) {
