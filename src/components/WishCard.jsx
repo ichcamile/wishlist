@@ -1,5 +1,6 @@
 import React from 'react';
 import { Gift, Heart, Trash2, ExternalLink } from 'lucide-react';
+import { formatPrice, parsePrice } from '../utils/formatters';
 
 export default function WishCard({ wish, onTogglePurchased, onDelete }) {
   return (
@@ -46,7 +47,7 @@ export default function WishCard({ wish, onTogglePurchased, onDelete }) {
         <h3 className="font-semibold text-zinc-900 mb-1 truncate text-base tracking-tight">{wish.title}</h3>
         
         <div className="flex items-center justify-between mt-4">
-          <span className="text-zinc-600 font-medium text-sm">{wish.price || 'Sem preço'}</span>
+          <span className="text-zinc-600 font-medium text-sm">{wish.price ? formatPrice(parsePrice(wish.price)) : 'Sem preço'}</span>
           
           <div className="flex gap-2">
             {wish.url && (
